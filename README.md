@@ -1,8 +1,3 @@
-# FastCrud — Simple CRUD User Management App
-
-A **FastAPI + PostgreSQL** app for managing users with async operations, nanoid IDs, hashed passwords, and email/password validation.
-
-
 ## Features
 
 * Create users with **unique IDs** using `nanoid`
