@@ -47,7 +47,7 @@ CREATE TABLE users (
 4. Run the FastAPI server:
 
 ```bash
-python main.py
+uv run main.py
 ```
 
 * Server runs at `http://127.0.0.1:8000`
