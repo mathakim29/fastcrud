@@ -17,6 +17,9 @@ A **FastAPI + PostgreSQL** app for managing users with async operations, nanoid 
 
 ## Installation
 
+> [!WARNING]
+> Ensure [uv](https://github.com/astral-sh/uv) and Postgres is installed
+
 1. **Clone the repository**:
 
 ```bash
@@ -24,24 +27,7 @@ git clone <repo-url>
 cd <repo>
 ```
 
-2. **Create a virtual environment**:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Linux/macOS
-.venv\Scripts\activate     # Windows
-```
-
-3. **Install dependencies**:
-
-```bash
-pip install -r requirements.txt
-```
-
-
-## Configuration
-
-1. **Create a `.env` file** in the project root (never commit this):
+2. **Create a `.env` file** in the project root:
 
 ```env
 DB_USERNAME=lenny
@@ -51,7 +37,7 @@ DB_PORT=5432
 DB_NAME=my_project
 ```
 
-2. **Create the `users` table** in your PostgreSQL database:
+3. **Create the `users` table** in your PostgreSQL database:
 
 ```sql
 CREATE TABLE users (
@@ -63,10 +49,7 @@ CREATE TABLE users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
-
-## Usage
-
-Run the FastAPI server:
+4. Run the FastAPI server:
 
 ```bash
 python main.py
@@ -99,7 +82,7 @@ Content-Type: application/json
 }
 ```
 
-Response:
+Response example:
 
 ```json
 {
@@ -117,29 +100,6 @@ Response:
 * At least **1 lowercase**
 * At least **1 number**
 * At least **1 special character** (`@$!%*?&`)
-
-### Notes
-
-* Uses **nanoid** for unique IDs
-* Uses **Loguru** for logging
-* Fully **async operations**
-* `.env` stores sensitive DB credentials (never commit)
-* Compatible with **Uvicorn** by default for running FastAPI
-
-## `requirements.txt`
-
-```txt
-fastapi
-uvicorn[standard]
-psycopg_pool
-passlib[bcrypt]
-python-dotenv
-loguru
-nanoid
-regex
-```
-
----
 
 > [!NOTE]
 > Tested on Fedora Workstation 42
